@@ -1,7 +1,9 @@
 # Decentralized CBOR
 
-- See [test vector results](./src/__fixtures__/outputs/table.csv) for storage size comparison table.
-- See [test vector tests](./src/__tests__/test-vectors.spec.ts) for tests.
+### Test Vectors
+
+- See [tests](./src/__tests__/test-vectors.spec.ts) for tests.
+- See [results](./src/__fixtures__/outputs/table.csv) for storage size comparison table.
 
 ## License
 

@@ -96,6 +96,9 @@ export class CBOR {
 
   static toCBOR(data: any, type: string = 'CBOR') {
     if (type === types.ZLIB_URDNA2015_CBOR) {
+      if (!data['@context']) {
+        throw new Error('ZLIB_URDNA2015_CBOR can only be applied to JSON-LD!');
+      }
       return CBOR.encodeCompressedAsync(data);
     }
 
