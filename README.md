@@ -1,5 +1,7 @@
 # Decentralized CBOR
 
+![CI](https://github.com/transmute-industries/decentralized-cbor/workflows/CI/badge.svg)
+
 ### Usage
 
 ```
