@@ -6,8 +6,6 @@ const pako = require('pako');
 const cbor = require('cbor');
 const dagCBOR = require('ipld-dag-cbor');
 
-import { documentLoader } from './__fixtures__/utils/documentLoader';
-
 export { tags, types };
 
 export class CBOR {
@@ -15,7 +13,10 @@ export class CBOR {
   constructor(document: any) {
     this.document = document;
   }
-  static encodeCompressedAsync = async (data: any): Promise<Buffer> => {
+  static encodeCompressedAsync = async (
+    data: any,
+    documentLoader: any
+  ): Promise<Buffer> => {
     let nquads;
     try {
       nquads = await jsonld.canonize(data, {
@@ -53,7 +54,8 @@ export class CBOR {
   };
 
   static decodeCompressedAsync = async (
-    data: Buffer
+    data: Buffer,
+    documentLoader: any
   ): Promise<{ document: any }> => {
     const dec = new cbor.Decoder({
       tags: {
@@ -94,12 +96,15 @@ export class CBOR {
     return _decodeCompressedAsync(data);
   };
 
-  static toCBOR(data: any, type: string = 'CBOR') {
+  static toCBOR(data: any, type: string = 'CBOR', documentLoader?: any) {
     if (type === types.ZLIB_URDNA2015_CBOR) {
       if (!data['@context']) {
         throw new Error('ZLIB_URDNA2015_CBOR can only be applied to JSON-LD!');
       }
-      return CBOR.encodeCompressedAsync(data);
+      if (!documentLoader) {
+        throw new Error('ZLIB_URDNA2015_CBOR requires a documentLoader!');
+      }
+      return CBOR.encodeCompressedAsync(data, documentLoader);
     }
 
     if (type === types.DAG_CBOR) {
@@ -110,10 +115,17 @@ export class CBOR {
 
   static async fromCBOR(
     data: Buffer,
-    type: string = 'CBOR'
+    type: string = 'CBOR',
+    documentLoader?: any
   ): Promise<{ document: any }> {
     if (type === types.ZLIB_URDNA2015_CBOR) {
-      const { document } = await CBOR.decodeCompressedAsync(data);
+      if (!documentLoader) {
+        throw new Error('ZLIB_URDNA2015_CBOR requires a documentLoader!');
+      }
+      const { document } = await CBOR.decodeCompressedAsync(
+        data,
+        documentLoader
+      );
       return document;
     }
     if (type === types.DAG_CBOR) {

@@ -5,6 +5,7 @@ import { CBOR, types } from '..';
 
 import { jsonld } from '../__fixtures__';
 import { jsonLdToJson } from '../__fixtures__/utils/jsonldToJson';
+import { documentLoader } from '../__fixtures__/utils/documentLoader';
 
 const rows: any = [];
 jsonld.forEach((vector: any) => {
@@ -16,7 +17,8 @@ jsonld.forEach((vector: any) => {
     const dag_cbor = await CBOR.toCBOR(jsonld, types.DAG_CBOR);
     const zlib_urdna2015_cbor = await CBOR.toCBOR(
       jsonld,
-      types.ZLIB_URDNA2015_CBOR
+      types.ZLIB_URDNA2015_CBOR,
+      documentLoader
     );
 
     fs.writeFileSync(

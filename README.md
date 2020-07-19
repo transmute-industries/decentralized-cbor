@@ -1,5 +1,20 @@
 # Decentralized CBOR
 
+### Usage
+
+```
+npm i @transmute/decentralized-cbor --save
+```
+
+```ts
+import { CBOR } from '@transmute/decentralized-cbor';
+
+const small = await CBOR.toCBOR(data, 'CBOR');
+const same_size = await CBOR.toCBOR(data, 'DAG_CBOR');
+// only works on JSON-LD!
+const smaller = await CBOR.toCBOR(data, 'ZLIB_URDNA2015_CBOR', documentLoader);
+```
+
 ### Test Vectors
 
 - See [tests](./src/__tests__/test-vectors.spec.ts) for tests.
