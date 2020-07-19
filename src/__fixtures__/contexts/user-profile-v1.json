@@ -1,0 +1,10 @@
+{
+  "@context": {
+    "microsoft": "https://microsoft.example.com/security#",
+    "sub": "microsoft:sub",
+    "name": "microsoft:name",
+    "email": "microsoft:email",
+    "department": "microsoft:department",
+    "birthdate": "microsoft:birthdate"
+  }
+}
