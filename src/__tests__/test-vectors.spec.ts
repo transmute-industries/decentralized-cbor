@@ -15,6 +15,11 @@ jsonld.forEach((vector: any) => {
     const json = jsonLdToJson(jsonld);
     const cbor = await CBOR.toCBOR(jsonld, types.CBOR);
     const dag_cbor = await CBOR.toCBOR(jsonld, types.DAG_CBOR);
+    const cborld_bytes = await CBOR.toCBOR(
+      jsonld,
+      types.CBOR_LD,
+      documentLoader
+    );
     const zlib_urdna2015_cbor = await CBOR.toCBOR(
       jsonld,
       types.ZLIB_URDNA2015_CBOR,
@@ -26,14 +31,14 @@ jsonld.forEach((vector: any) => {
         __dirname,
         '../__fixtures__/outputs/' + vector.name + `.json`
       ),
-      json
+      JSON.stringify(json, null, 2)
     );
     fs.writeFileSync(
       path.resolve(
         __dirname,
         '../__fixtures__/outputs/' + vector.name + `.jsonld`
       ),
-      jsonld
+      JSON.stringify(jsonld, null, 2)
     );
     fs.writeFileSync(
       path.resolve(
@@ -49,6 +54,15 @@ jsonld.forEach((vector: any) => {
       ),
       dag_cbor.toString('base64')
     );
+
+    fs.writeFileSync(
+      path.resolve(
+        __dirname,
+        '../__fixtures__/outputs/' + vector.name + `.cborld.b64`
+      ),
+      cborld_bytes.toString('base64')
+    );
+
     fs.writeFileSync(
       path.resolve(
         __dirname,
@@ -63,13 +77,15 @@ jsonld.forEach((vector: any) => {
       JSON.stringify(jsonld).length,
       cbor.length,
       dag_cbor.length,
+      cborld_bytes.length,
       zlib_urdna2015_cbor.length,
     ]);
   });
 });
 
 it('build-csv', () => {
-  const title = 'Input, JSON, JSON-LD, CBOR, DAG_CBOR, ZLIB_URDNA2015_CBOR';
+  const title =
+    'Input, JSON, JSON-LD, CBOR, DAG_CBOR, CBOR_LD, ZLIB_URDNA2015_CBOR';
   const table = `${title}\n${rows.join('\n')}`;
   fs.writeFileSync(
     path.resolve(__dirname, '../__fixtures__/outputs/table.csv'),

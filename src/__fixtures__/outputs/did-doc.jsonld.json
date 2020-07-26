@@ -1,0 +1,31 @@
+{
+  "id": "did:key:z6MkmrABwH4K9khWpLT5wCMFgaP9uy7RDhZLbCrKZftzNHSv",
+  "publicKey": [
+    {
+      "id": "#z6MkmrABwH4K9khWpLT5wCMFgaP9uy7RDhZLbCrKZftzNHSv",
+      "type": "Ed25519VerificationKey2018",
+      "controller": "did:key:z6MkmrABwH4K9khWpLT5wCMFgaP9uy7RDhZLbCrKZftzNHSv",
+      "publicKeyBase58": "8Pu9M2ospDD3hqcPFdPQqUqA6PqZopJyuBwPjPvyT4fY"
+    }
+  ],
+  "authentication": [
+    "#z6MkmrABwH4K9khWpLT5wCMFgaP9uy7RDhZLbCrKZftzNHSv"
+  ],
+  "assertionMethod": [
+    "#z6MkmrABwH4K9khWpLT5wCMFgaP9uy7RDhZLbCrKZftzNHSv"
+  ],
+  "capabilityDelegation": [
+    "#z6MkmrABwH4K9khWpLT5wCMFgaP9uy7RDhZLbCrKZftzNHSv"
+  ],
+  "capabilityInvocation": [
+    "#z6MkmrABwH4K9khWpLT5wCMFgaP9uy7RDhZLbCrKZftzNHSv"
+  ],
+  "keyAgreement": [
+    {
+      "id": "#z6LSmQurfmjWkw9p87zv1UMr6hZcmwRwNjpCzSw8f8ADm5Wh",
+      "type": "X25519KeyAgreementKey2019",
+      "controller": "did:key:z6MkmrABwH4K9khWpLT5wCMFgaP9uy7RDhZLbCrKZftzNHSv",
+      "publicKeyBase58": "Ajjh9TvefUS52jd9Upqtn7M8vntpg8e47UDTAfWh3hjw"
+    }
+  ]
+}

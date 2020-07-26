@@ -1,0 +1,10 @@
+{
+  "@context": [
+    "https://example.com/oidc/user-profile/v1"
+  ],
+  "sub": "83692",
+  "name": "Alice Adams",
+  "email": "alice@example.com",
+  "department": "Engineering",
+  "birthdate": "1975-12-31"
+}

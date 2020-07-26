@@ -1,0 +1,240 @@
+{
+  "@type": "gs1:FruitsVegetables",
+  "preparationInformation": {
+    "preparationInstructions": [
+      {
+        "@value": "Keep cool. Wash before use",
+        "@language": "en"
+      }
+    ],
+    "@type": "gs1:FoodAndBeveragePreparationInformation"
+  },
+  "@id": "http://fruitfarm-example.com/id/gtin/00614141147083",
+  "productName": [
+    {
+      "@value": "Organic easy peelers",
+      "@language": "en"
+    }
+  ],
+  "gtin": "00614141147083",
+  "productDescription": [
+    {
+      "@value": "Juicy tangerines (700g), rich in vitamin C",
+      "@language": "en"
+    }
+  ],
+  "image": {
+    "filePixelWidth": {
+      "@value": "320",
+      "@type": "xsd:integer"
+    },
+    "filePixelHeight": {
+      "@value": "240",
+      "@type": "xsd:integer"
+    },
+    "referencedFileURL": {
+      "@id": "http://www.fruitfarm-example.com/prod_img/14708.jpg"
+    },
+    "@type": "gs1:ReferencedFileDetails"
+  },
+  "functionalName": [
+    {
+      "@value": "organic seedless unwaxed mandarin (Clemenvilla)",
+      "@language": "en"
+    }
+  ],
+  "gpcCategoryDescription": [
+    {
+      "@value": "Mandarin Hybrids",
+      "@language": "en"
+    }
+  ],
+  "gpcCategoryCode": "10006441",
+  "isProductRecalled": {
+    "@value": "false",
+    "@type": "xsd:boolean"
+  },
+  "netWeight": {
+    "value": {
+      "@value": "700",
+      "@type": "xsd:float"
+    },
+    "unitCode": "GRM",
+    "@type": "gs1:QuantitativeValue"
+  },
+  "descriptiveSize": [
+    {
+      "@value": "53/60 mm",
+      "@language": "en"
+    }
+  ],
+  "consumerStorageInstructions": [
+    {
+      "@value": "Store in a cool dry place",
+      "@language": "en"
+    }
+  ],
+  "isSeedless": {
+    "@id": "gs1:NonbinaryLogicCode-TRUE"
+  },
+  "isWashedReadyToEat": {
+    "@id": "gs1:NonbinaryLogicCode-TRUE"
+  },
+  "countryOfOrigin": [
+    {
+      "@type": "gs1:Country",
+      "countryCode": "ES"
+    }
+  ],
+  "countryOfLastProcessing": {
+    "countryCode": "US",
+    "@type": "gs1:Country"
+  },
+  "healthClaimDescription": [
+    {
+      "@value": "Rich in vitamin C",
+      "@language": "en"
+    }
+  ],
+  "nutritionalClaim": [
+    {
+      "@id": "gs1:NutritionalClaimTypeCode-NATURAL_SOURCE_OF_VITAMINS_AND_OR_MINERALS"
+    }
+  ],
+  "growingMethod": [
+    {
+      "@id": "gs1:GrowingMethodCode-ORGANIC"
+    }
+  ],
+  "irradiatedCode": {
+    "@id": "gs1:NonbinaryLogicCode-FALSE"
+  },
+  "nutrientBasisQuantity": {
+    "value": "100",
+    "unitCode": "GRM",
+    "@type": "gs1:QuantitativeValue"
+  },
+  "fatPerNutrientBasis": {
+    "value": {
+      "@value": "0.2",
+      "@type": "xsd:float"
+    },
+    "unitCode": "GRM",
+    "@type": "gs1:NutritionMeasurementType"
+  },
+  "saturatedFatPerNutrientBasis": {
+    "value": {
+      "@value": "0.0",
+      "@type": "xsd:float"
+    },
+    "unitCode": "GRM",
+    "@type": "gs1:NutritionMeasurementType"
+  },
+  "carbohydratesPerNutrientBasis": {
+    "value": {
+      "@value": "9.6",
+      "@type": "xsd:float"
+    },
+    "unitCode": "GRM",
+    "@type": "gs1:NutritionMeasurementType"
+  },
+  "sugarsPerNutrientBasis": {
+    "value": {
+      "@value": "9.6",
+      "@type": "xsd:float"
+    },
+    "unitCode": "GRM",
+    "@type": "gs1:NutritionMeasurementType"
+  },
+  "saltPerNutrientBasis": {
+    "value": {
+      "@value": "0.03",
+      "@type": "xsd:float"
+    },
+    "unitCode": "GRM",
+    "@type": "gs1:NutritionMeasurementType"
+  },
+  "fibrePerNutrientBasis": {
+    "value": {
+      "@value": "1.7",
+      "@type": "xsd:float"
+    },
+    "unitCode": "GRM",
+    "@type": "gs1:NutritionMeasurementType"
+  },
+  "proteinPerNutrientBasis": {
+    "value": {
+      "@value": "0.7",
+      "@type": "xsd:float"
+    },
+    "unitCode": "GRM",
+    "@type": "gs1:NutritionMeasurementType"
+  },
+  "vitaminCPerNutrientBasis": {
+    "value": {
+      "@value": "54.0",
+      "@type": "xsd:float"
+    },
+    "unitCode": "MGM",
+    "dailyValueIntakePercent": {
+      "@value": "68",
+      "@type": "xsd:float"
+    },
+    "@type": "gs1:NutritionMeasurementType"
+  },
+  "energyPerNutrientBasis": [
+    {
+      "value": {
+        "@value": "196",
+        "@type": "xsd:float"
+      },
+      "unitCode": "KJO",
+      "@type": "gs1:NutritionMeasurementType"
+    },
+    {
+      "value": {
+        "@value": "46",
+        "@type": "xsd:float"
+      },
+      "unitCode": "E14",
+      "@type": "gs1:NutritionMeasurementType"
+    }
+  ],
+  "organicClaim": [
+    {
+      "organicClaimPercent": {
+        "@value": "100",
+        "@type": "xsd:float"
+      },
+      "organicClaimAgency": {
+        "@id": "gs1:OrganicClaimAgencyCode-FDA"
+      },
+      "@type": "gs1:OrganicClaimDetails"
+    }
+  ],
+  "dietCode": [
+    {
+      "dietType": {
+        "@id": "gs1:DietTypeCode-VEGETARIAN"
+      },
+      "@type": "gs1:DietTypeCodeDetails"
+    }
+  ],
+  "packaging": {
+    "packagingRecyclingProcessType": [
+      {
+        "@id": "gs1:PackagingRecyclingProcessTypeCode-COMPOSTABLE"
+      }
+    ],
+    "packagingType": "NT",
+    "@type": "gs1:PackagingDetails"
+  },
+  "packagingMaterial": [
+    {
+      "packagingMaterialType": {
+        "@id": "gs1:PackagingMaterialTypeCode-PLASTIC_BIOPLASTIC"
+      },
+      "@type": "gs1:PackagingMaterialDetails"
+    }
+  ]
+}
