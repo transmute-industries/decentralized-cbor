@@ -5,6 +5,7 @@ const jsonld = require('jsonld');
 const pako = require('pako');
 const cbor = require('cbor');
 const dagCBOR = require('ipld-dag-cbor');
+const cborld = require('@digitalbazaar/cborld');
 
 export { tags, types };
 
@@ -97,7 +98,7 @@ export class CBOR {
   };
 
   static toCBOR(data: any, type: string = 'CBOR', documentLoader?: any) {
-    if (type === types.ZLIB_URDNA2015_CBOR) {
+    if (type === types.ZLIB_URDNA2015_CBOR || type === types.CBOR_LD) {
       if (!data['@context']) {
         throw new Error('ZLIB_URDNA2015_CBOR can only be applied to JSON-LD!');
       }
@@ -105,6 +106,10 @@ export class CBOR {
         throw new Error('ZLIB_URDNA2015_CBOR requires a documentLoader!');
       }
       return CBOR.encodeCompressedAsync(data, documentLoader);
+    }
+
+    if (type === types.CBOR_LD) {
+      return cborld.encode({ jsonldDocument: data, documentLoader });
     }
 
     if (type === types.DAG_CBOR) {
@@ -127,6 +132,10 @@ export class CBOR {
         documentLoader
       );
       return document;
+    }
+
+    if (type === types.CBOR_LD) {
+      return cborld.decode({ cborldBytes: data, documentLoader });
     }
     if (type === types.DAG_CBOR) {
       return Promise.resolve(dagCBOR.util.deserialize(data));
